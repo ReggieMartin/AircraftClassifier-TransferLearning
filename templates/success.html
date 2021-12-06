@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Results</title>
+  </head>
+
+
+  <body>
+    <div class = "second-main" style = "height: 100%; width: 100%;">
+        <nav>
+            <ul style = "padding-right: 2%;" class = "main-nav">
+                <li><a href ="/">Back to Upload Page</a></li>                
+            </ul>
+           
+        </nav>
+        <div class = "header">
+            <row style = "width: 100% ; display: flex; justify-content: center;">
+                <h3 class="header-text">Uploaded Image</h3>
+            </row>
+            <row style = "width: 100% ; display: flex; justify-content: center;">
+                <img class = "result-img" src={{url_for('static', filename = 'images/'+ img)}}>
+            </row>
+        </div>
+
+        <div class = "info">
+        
+            <row style = "width: 100% ; display: flex; justify-content: center;">
+                <h3 class = "header-text">Model Prediction</h3>
+            </row>
+            <row style = "width: 100%; display: flex; justify-content: center;">
+                <table class="table-bordered text-light table-custom">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Class</th>
+                        <th>Probability</th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td>{{ predictions.class1 }}</td>
+                        <td>{{ predictions.prob1 }} %</td>
+                      </tr>
+                      <tr>
+                        <td>2nd</td>
+                        <td>{{ predictions.class2 }}</td>                                                         
+                        <td>{{ predictions.prob2 }} %</td>                                                      
+                    </tr>                                                                                                               
+                    <tr>
+                        <td>3rd</td>
+                        <td>{{ predictions.class3 }}</td>
+                        <td>{{ predictions.prob3 }} %</td>
+                      </tr>
+                      <tr>
+                        <td>4th</td>
+                        <td>{{ predictions.class4 }}</td>
+                        <td>{{ predictions.prob4 }} %</td>
+                      </tr>
+                      <tr>
+                        <td>5th</td>
+                        <td>{{ predictions.class5 }}</td>
+                        <td>{{ predictions.prob5 }} %</td>
+                      </tr>
+                </table>
+            </row>
+        </div>
+    </div>
+</body>
+  <!--
+  <body>
+    <div class="container">
+      <img src="../static/logo.png" alt="" class="logo" />
+      <h1>Thank You!</h1>
+      <h2>Thank you for rating your experience. We hope to see you soon!</h2>
+    </div>
+  </body>
+-->
+</html>

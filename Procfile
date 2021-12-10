@@ -1,1 +1,1 @@
-web gunicorn warbirds_app:warbirds_app
+web: gunicorn warbirds_app:warbirds_app
